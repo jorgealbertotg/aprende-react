@@ -1,26 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  handleClick(e) {
+    console.log(e);
+    console.log(e.nativeEvent);
+    alert('Click desde React');
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h4>Eventos</h4>
+          <button onClick={() => alert('Click desde React!')}>Click me!</button>
+          <button onClick={this.handleClick}>Click me!</button>
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
