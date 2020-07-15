@@ -3,21 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const numbers = [0, 1, 1, 2, 3, 5, 8];
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <p>Serie de Fibonacci</p>
+          {
+            numbers.map((number, index) => {
+            return <p key={index}>{number}</p>
+            })
+          }
+        </div>
       </header>
     </div>
   );
